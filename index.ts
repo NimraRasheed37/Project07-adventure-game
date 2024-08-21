@@ -1,6 +1,12 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 
+console.log(
+  chalk.bold.black.bgYellow(
+    "\n*****Welcome to Harry Potter Dueling Adventure game by Nimra Rasheed*****\n"
+  )
+);
+
 // Define the Spell class
 class Spell {
   constructor(public name: string, public damage: number) {}
@@ -73,7 +79,11 @@ async function startGame() {
   });
 
   const enemy = new Enemy(enemyData.enemy);
-  console.log(`${chalk.bold.green(player.name)} is battling ${chalk.bold.red(enemy.name)}!`);
+  console.log(
+    `${chalk.bold.green(player.name)} is battling ${chalk.bold.red(
+      enemy.name
+    )}!`
+  );
 
   // Game loop
   while (enemy.health > 0 && player.health > 0) {
@@ -93,7 +103,11 @@ async function startGame() {
 
     // Check if enemy is defeated
     if (enemy.isDefeated()) {
-      console.log(`----${chalk.bold.red(enemy.name)} has been defeated!----`);
+      console.log(
+        `----${chalk.bold.red(enemy.name)} has been defeated by ${chalk.green(
+          player.name
+        )}!----`
+      );
       break;
     }
 
@@ -108,7 +122,9 @@ async function startGame() {
 
     if (player.health <= 0) {
       console.log(
-        `------${chalk.bold.green(player.name)} you are defeated by ${chalk.bold.red(enemy.name)}! Game over------`
+        `------${chalk.bold.green(
+          player.name
+        )} you are defeated by ${chalk.bold.red(enemy.name)}! Game over------`
       );
       break;
     }

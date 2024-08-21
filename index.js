@@ -1,5 +1,6 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
+console.log(chalk.bold.black.bgYellow("*****Welcome to Harry Potter Duel game by Nimra Rasheed*****\n"));
 // Define the Spell class
 class Spell {
     name;
@@ -79,7 +80,7 @@ async function startGame() {
         }
         // Check if enemy is defeated
         if (enemy.isDefeated()) {
-            console.log(`----${chalk.bold.red(enemy.name)} has been defeated!----`);
+            console.log(`----${chalk.bold.red(enemy.name)} has been defeated by ${chalk.green(player.name)}!----`);
             break;
         }
         // Simple enemy attack (you can expand this with more logic)
